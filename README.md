@@ -13,3 +13,18 @@ make build
 ```
 
 Binaries will be in `./build/`. Run `make clean` to remove them.
+
+## Install as a Service
+
+```bash
+make install
+```
+
+This builds the binaries and installs ligolo-ng proxy as a systemd service. After installation, run the proxy once manually to generate the config file, then start the service:
+
+```bash
+cd /etc/ligolo-ng
+sudo ./ligolo-proxy -selfcert
+sudo systemctl enable ligolo-ng
+sudo systemctl start ligolo-ng
+```

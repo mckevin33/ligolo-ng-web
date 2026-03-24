@@ -1,6 +1,6 @@
 OUTPUT_DIR := ./build
 
-.PHONY: all build clean
+.PHONY: all build install clean
 
 all: build
 
@@ -10,6 +10,9 @@ build:
 	@echo ""
 	@echo "Build complete. Binaries in $(OUTPUT_DIR)/"
 	@ls -lh $(OUTPUT_DIR)/
+
+install: build
+	sudo bash install.sh
 
 clean:
 	rm -rf $(OUTPUT_DIR)
